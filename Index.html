@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="App.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding ng-if="!showLogin">
+        <div>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input ng-model="users.email" type="email">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>First name</label>
+                <input ng-model="users.firstName">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Last Name</label>
+                <input ng-model="users.lname">
+            </md-input-container>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input ng-model="users.psw" type="password">
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>Address</label>
+                <input ng-model="users.address">
+            </md-input-container>
+
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>State</label>
+                <md-select ng-model="user.state">
+                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                        {{state.abbrev}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+
+            <md-datepicker ng-model="user.submissionDate" md-placeholder="Enter date">
+
+            </md-datepicker>
+            <br>
+            <md-button class="md-button  md-primary md-raised btn-success" type = "submit" ng-click="login()">Sign Up</md-button>
+            <md-button class="md-button  md-primary" ng-click="sw()">Already sign up</md-button>
+
+        </div>
+          <span>{{users}}</span>
+    </md-content>
+
+
+    <md-content ng-if="showLogin" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+        <div>
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Email</label>
+                <input ng-model="login.email" type="email">
+            </md-input-container>
+
+
+
+            <md-input-container class="md-block" flex-gt-sm>
+                <label>Password</label>
+                <input ng-model="login.psw">
+            </md-input-container>
+
+
+
+
+            <br>
+            <md-button class="md-button  md-primary md-raised" ng-click="login()">Log In</md-button>
+            <md-button class="md-button  md-primary " ng-click="sw()">Do not have any account! Sign up here </md-button>
+
+        </div>
+      
+       
+
+    </md-content>
+</body>
+
+</html>
