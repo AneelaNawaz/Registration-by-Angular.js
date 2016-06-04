@@ -16,32 +16,32 @@
 
 <body ng-app="myApp" ng-controller="myController">
 
-    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding ng-if="!showLogin">
+    <!-- <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding ng-if="!showLogin">
         <div>
 
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Email</label>
-                <input ng-model="users.email" type="email">
+                <input ng-model="user.email" type="email">
             </md-input-container>
 
             <md-input-container class="md-block" flex-gt-sm>
                 <label>First name</label>
-                <input ng-model="users.firstName">
+                <input ng-model="user.firstName">
             </md-input-container>
 
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Last Name</label>
-                <input ng-model="users.lname">
+                <input ng-model="user.lname">
             </md-input-container>
 
             <md-input-container class="md-block" flex-gt-sm>
                 <label>Password</label>
-                <input ng-model="users.psw" type="password">
+                <input ng-model="user.psw" type="password">
             </md-input-container>
 
             <md-input-container class="md-block">
                 <label>Address</label>
-                <input ng-model="users.address">
+                <input ng-model="user.address">
             </md-input-container>
 
 
@@ -58,39 +58,42 @@
 
             </md-datepicker>
             <br>
-            <md-button class="md-button  md-primary md-raised btn-success" type = "submit" ng-click="login()">Sign Up</md-button>
+            <md-button class="md-button  md-primary md-raised btn-success" type = "submit" ng-click="signup()">Sign Up</md-button>
             <md-button class="md-button  md-primary" ng-click="sw()">Already sign up</md-button>
 
         </div>
           <span>{{users}}</span>
-    </md-content>
+    </md-content> -->
 
 
-    <md-content ng-if="showLogin" md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+    <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
         <div>
 
             <md-input-container class="md-block" flex-gt-sm>
-                <label>Email</label>
-                <input ng-model="login.email" type="email">
+                <label>Number 1</label>
+                <input ng-model="num1" type="input" ng-click = "num1 = ''" >
             </md-input-container>
 
 
 
             <md-input-container class="md-block" flex-gt-sm>
-                <label>Password</label>
-                <input ng-model="login.psw">
+                <label>Number 2</label>
+                <input ng-model="num2" type = "input" ng-click = "num2 = '' ">
             </md-input-container>
 
 
 
 
             <br>
-            <md-button class="md-button  md-primary md-raised" ng-click="login()">Log In</md-button>
-            <md-button class="md-button  md-primary " ng-click="sw()">Do not have any account! Sign up here </md-button>
+            <md-button class="md-button  md-primary md-raised" ng-click="add()">Addition</md-button>
+            <md-button class="md-button  md-primary md-raised" ng-click="sub()">Subtract</md-button>
+            <md-button class="md-button  md-primary md-raised" ng-click="min()">Multiply</md-button>
+            <md-button class="md-button  md-primary md-raised" ng-click="divn()">Division</md-button>
+
 
         </div>
-      
-       
+
+
 
     </md-content>
 </body>

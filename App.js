@@ -1,42 +1,52 @@
 var app = angular.module("myApp", ["ngMaterial"]);
 
 app.controller("myController", ['$scope', function ($scope) {
-    
-    $scope.user = {};
-    $scope.users = [
-      //  { "email": "a@a.com", "firstName": "ssd", "lname": "dsdsd", "psw": "a", "address": "fsfsf" } 
-    ];
 
-    $scope.login = {};
 
-    $scope.signup = function () {
-        console.log($scope.user);
-        $scope.users.push($scope.user);
-        $scope.user = {};
-       // alert("Successfully registered");
-    };   
+
+
+$scope.n1;
+    $scope.add = function () {
+
+      
     
-    
-    $scope.showLogin = true;
-    $scope.sw = function () {
-        $scope.showLogin = !$scope.showLogin;
+      
+      
+        $scope.n1 = parseInt($scope.num1);
+        $scope.n2 =parseInt($scope.num2);
+        $scope.n3 = $scope.n1 + $scope.n2;
+        alert($scope.n3);
+
+       // alert.parseInt($scope.num1 + $scope.num2);
+
     }
-    
-    
-    
-    $scope.login = function () {
-        for (var i = 0; i < $scope.users.length; i++) {
-                
-            console.log( $scope.login.email ); 
-                
-            if ($scope.login.email == $scope.users[i].email && $scope.login.psw == $scope.users[i].psw) {
 
-                alert("you loged in");
-            }            
-        
-            // console.log("Not matched");
-        }
-        console.log("Not matched");
+
+    $scope.sub = function () {
+
+
+        alert($scope.num1 - $scope.num2);
+
     }
+
+
+    $scope.min = function () {
+
+
+        alert($scope.num1 * $scope.num2);
+
+    }
+
+    $scope.divn = function () {
+
+
+        alert($scope.num1 / $scope.num2);
+
+    }
+
 }]);
+
+ 
+
+
 
